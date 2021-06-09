@@ -1,6 +1,6 @@
-# Docker for Android SDK 29 + NDK
+# Docker for Android SDK 30 + NDK
 
-Docker for Android SDK 29 with preinstalled build tools, emulator image and pre-installed Android NDK.
+Docker for Android SDK 30 with preinstalled build tools, emulator image and pre-installed Android NDK.
 
 > Based on [mindrunner/docker-android-sdk](https://github.com/mindrunner/docker-android-sdk)
 > and [bitrise-io/android-ndk](https://github.com/bitrise-io/android-ndk)
@@ -15,8 +15,8 @@ Docker for Android SDK 29 with preinstalled build tools, emulator image and pre-
   emulator                                    | 30.1.5  | Android Emulator                           | emulator/
   patcher;v4                                  | 1       | SDK Patch Applier v4                       | patcher/v4/
   platform-tools                              | 30.0.4  | Android SDK Platform-Tools                 | platform-tools/
-  platforms;android-29                        | 5       | Android SDK Platform 29                    | platforms/android-29/
-  system-images;android-29;google_apis;x86_64 | 11      | Google APIs Intel x86 Atom_64 System Image | system-images/android-29/google_apis/x86_64/
+  platforms;android-30                        | 5       | Android SDK Platform 30                    | platforms/android-30/
+  system-images;android-30;google_apis;x86_64 | 11      | Google APIs Intel x86 Atom_64 System Image | system-images/android-30/google_apis/x86_64/
   NDK                                         | r22     | Android NDK r22                            | ndk/
 ```
 
@@ -24,11 +24,11 @@ Docker for Android SDK 29 with preinstalled build tools, emulator image and pre-
 
 - Interactive way
   ```bash
-  $ docker run -it --rm --privileged rmirandamarenco/android_sdk_29_ndk:latest bash
+  $ docker run -it --rm --privileged rmirandamarenco/android_sdk_30_ndk:latest bash
   # check installed packages
   $ sdkmanager --list
   # create and run emulator
-  $ avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-29;google_apis;x86_64"
+  $ avdmanager create avd -n first_avd --abi google_apis/x86_64 -k "system-images;android-30;google_apis;x86_64"
   $ emulator -avd first_avd -no-window -no-audio &
   $ adb devices
   # You can also run other Android platform tools, which are all added to the PATH environment variable
@@ -40,8 +40,8 @@ Docker for Android SDK 29 with preinstalled build tools, emulator image and pre-
 - Non-interactive way
   ```bash
   # check installed packages
-  $ docker run -it --rm rmirandamarenco/android_sdk_29_ndk:latest sdkmanager --list
+  $ docker run -it --rm rmirandamarenco/android_sdk_30_ndk:latest sdkmanager --list
   # list existing emulators
-  $ docker run -it --rm rmirandamarenco/android_sdk_29_ndk:latest avdmanager list avd
+  $ docker run -it --rm rmirandamarenco/android_sdk_30_ndk:latest avdmanager list avd
   # You can also run other Android platform tools, which are all added to the PATH environment variable
   ```
