@@ -2,8 +2,9 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
+RUN export LC_ALL=en_US.UTF-8
+RUN export LANG=en_US.UTF-8
+RUN locale-gen en_US.UTF-8
 
 ENV ANDROID_HOME      /opt/android-sdk-linux
 ENV ANDROID_NDK_VERSION r22
